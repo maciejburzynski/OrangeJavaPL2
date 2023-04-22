@@ -22,3 +22,5 @@ public class BreadRestController {
         return breadRepository.getAllBreads();
     }
 }
+
+//DI -> implementacja IOC
