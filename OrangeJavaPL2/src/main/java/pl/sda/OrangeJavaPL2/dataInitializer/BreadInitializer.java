@@ -15,8 +15,8 @@ public class BreadInitializer {
 
     @PostConstruct
     public void initBreads(){
-        Bread bread = new Bread(1L,"Bagietka", 3.50);
-        Bread bread1 = new Bread(2L,"Grahamka", 1.00);
+        Bread bread = new Bread("Bagietka", 3.50);
+        Bread bread1 = new Bread("Grahamka", 1.00);
 
         breadRepository.addBread(bread);
         breadRepository.addBread(bread1);

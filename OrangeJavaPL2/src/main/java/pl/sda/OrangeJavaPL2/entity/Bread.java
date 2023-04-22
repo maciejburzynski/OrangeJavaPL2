@@ -2,10 +2,7 @@ package pl.sda.OrangeJavaPL2.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Setter
@@ -16,9 +13,14 @@ import javax.persistence.Table;
 public class Bread {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
     @Column(name = "price_in_pln")
     Double price;
 
+    public Bread(String name, Double price) {
+        this.name = name;
+        this.price = price;
+    }
 }
