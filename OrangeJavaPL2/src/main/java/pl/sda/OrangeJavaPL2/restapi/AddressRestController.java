@@ -1,9 +1,7 @@
 package pl.sda.OrangeJavaPL2.restapi;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.sda.OrangeJavaPL2.entity.Address;
 import pl.sda.OrangeJavaPL2.repository.AddressRepository;
 
@@ -19,5 +17,9 @@ public class AddressRestController {
     @GetMapping(path = "/addresses")
     public Set<Address> getAllAddresses(){
         return addressRepository.getAllAddresses();
+    }
+    @PostMapping (path = "/addresses")
+    public void addAddress(@RequestBody Address address){
+        addressRepository.addAddress(address);
     }
 }

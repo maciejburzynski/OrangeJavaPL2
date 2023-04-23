@@ -22,7 +22,6 @@ public class BreadRestController {
         return breadService.getAllBreads();
     }
 
-
     //PostMapping without mapping error codes returning to client
 //    @PostMapping()
 //    void addBread(@RequestBody Bread bread) { // @RequestBody to map to bread

@@ -17,11 +17,14 @@ public class Bread {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Autoincrement id with every single object
     Long id;
     String name;
+    @Enumerated(EnumType.STRING)
+    BreadType breadType;
     @Column(name = "price_in_pln") // Change default name to custom one
     Double price;
 
-    public Bread(String name, Double price) { // Every single field included except id
+    public Bread(String name, BreadType breadType, Double price) {
         this.name = name;
+        this.breadType = breadType;
         this.price = price;
     }
 }

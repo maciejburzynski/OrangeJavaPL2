@@ -3,6 +3,7 @@ package pl.sda.OrangeJavaPL2.dataInitializer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import pl.sda.OrangeJavaPL2.entity.Bread;
+import pl.sda.OrangeJavaPL2.entity.BreadType;
 import pl.sda.OrangeJavaPL2.repository.BreadRepository;
 
 import javax.annotation.PostConstruct;
@@ -15,8 +16,8 @@ public class BreadInitializer {
 
     @PostConstruct
     public void initBreads(){
-        Bread bread = new Bread("Bagietka", 3.50);
-        Bread bread1 = new Bread("Grahamka", 1.00);
+        Bread bread = new Bread("Bagietka", BreadType.PSZENNE, 3.50);
+        Bread bread1 = new Bread("Grahamka",BreadType.WIELOZIARNISTE, 1.00);
 
         breadRepository.addBread(bread);
         breadRepository.addBread(bread1);
