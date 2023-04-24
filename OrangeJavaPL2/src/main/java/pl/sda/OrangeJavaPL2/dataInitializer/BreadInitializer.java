@@ -7,6 +7,7 @@ import pl.sda.OrangeJavaPL2.entity.BreadType;
 import pl.sda.OrangeJavaPL2.repository.BreadRepository;
 
 import javax.annotation.PostConstruct;
+import java.math.BigDecimal;
 
 @Component
 @RequiredArgsConstructor
@@ -16,8 +17,8 @@ public class BreadInitializer {
 
     @PostConstruct
     public void initBreads(){
-        Bread bread = new Bread("Bagietka", BreadType.PSZENNE, 3.50);
-        Bread bread1 = new Bread("Grahamka",BreadType.WIELOZIARNISTE, 1.00);
+        Bread bread = new Bread("Bagietka", BreadType.PSZENNE, BigDecimal.valueOf(3.50));
+        Bread bread1 = new Bread("Grahamka",BreadType.WIELOZIARNISTE, BigDecimal.valueOf(1.00));
 
         breadRepository.addBread(bread);
         breadRepository.addBread(bread1);

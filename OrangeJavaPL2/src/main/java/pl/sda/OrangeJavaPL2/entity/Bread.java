@@ -3,6 +3,7 @@ package pl.sda.OrangeJavaPL2.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity // Database entity-object to map
 @Setter // Required for entity
@@ -20,9 +21,9 @@ public class Bread {
     @Enumerated(EnumType.STRING)
     BreadType breadType;
     @Column(name = "price_in_pln") // Change default name to custom one
-    Double price;
+    BigDecimal price;
 
-    public Bread(String name, BreadType breadType, Double price) {
+    public Bread(String name, BreadType breadType, BigDecimal price) {
         this.name = name;
         this.breadType = breadType;
         this.price = price;
