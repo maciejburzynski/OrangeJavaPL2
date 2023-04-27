@@ -24,5 +24,9 @@ public interface IBreadRepository extends JpaRepository<Bread,Long> {
                      @Param("name") String name,
                      @Param("price") BigDecimal price,
                      @Param("type") String type);
-    // Select * from users where name = [ AND 1=1; DROP users]; -> SQL Injection
+    // Select * from users where name = [ AND 1=1x; DROP users]; -> SQL Injection
+
+
+
+//    name [ or 1=1; drop users;]
 }

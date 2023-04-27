@@ -54,7 +54,7 @@ public class BreadRestController {
     @PutMapping(path = "/{id}")
     public ResponseEntity updateBread(@PathVariable Long id, @RequestBody Bread bread) {
         breadService.updateBread(id, bread.getName(), bread.getPrice(), bread.getBreadType().toString());
-        log.info("Updating bread with id: ", id);
+        log.info("Updating bread with id: {}", id);
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED)
 //                .status(202)// the same as above
