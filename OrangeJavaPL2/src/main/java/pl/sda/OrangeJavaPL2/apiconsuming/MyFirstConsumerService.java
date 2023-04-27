@@ -26,4 +26,13 @@ public class MyFirstConsumerService {
 
         log.info(httpResponse.body().toString());
     }
+
+    /*
+    *
+    * Create your own consumer and consumpt API of your preferences
+    *
+    * https://apipheny.io/free-api/
+    *
+    *
+    * */
 }
