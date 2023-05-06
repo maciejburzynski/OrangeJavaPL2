@@ -25,5 +25,8 @@ public class Bakery {
 
     @Embedded
     Owner owner;
-
+//    -> unpack to below fields
+//    String firstName;
+//    String lastName;
+//    int age;
 }

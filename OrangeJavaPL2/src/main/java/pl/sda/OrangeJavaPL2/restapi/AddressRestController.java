@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import pl.sda.OrangeJavaPL2.entity.Address;
 import pl.sda.OrangeJavaPL2.repository.AddressRepository;
-
 import java.util.Set;
 
 @RestController
@@ -22,4 +21,7 @@ public class AddressRestController {
     public void addAddress(@RequestBody Address address){
         addressRepository.addAddress(address);
     }
+/*
+api/addresses -> Post - add resources, Get - get all resources
+ */
 }

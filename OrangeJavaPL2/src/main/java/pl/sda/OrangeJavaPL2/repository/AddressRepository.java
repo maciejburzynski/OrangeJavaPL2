@@ -4,13 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import pl.sda.OrangeJavaPL2.entity.Address;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Repository
-public class AddressRepository {
+public class AddressRepository { // DAO - Data Access Object
 
     private final IAddressRepository addressRepository;
 

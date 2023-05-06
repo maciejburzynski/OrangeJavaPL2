@@ -15,7 +15,8 @@ public class BreadInitializer {
 
     private final BreadRepository breadRepository;
 
-    @PostConstruct
+    @PostConstruct // init -> open db connection
+//  @PreDestroy // -> close db connection
     public void initBreads(){
         Bread bread = new Bread("Bagietka", BreadType.WHEAT, BigDecimal.valueOf(3.50));
         Bread bread1 = new Bread("Grahamka",BreadType.MULTIGRAIN, BigDecimal.valueOf(1.00));

@@ -17,9 +17,10 @@ public interface IBreadRepository extends JpaRepository<Bread,Long> {
 
     Bread findByName(String name);
 
+//    Bread findBreadsBy - custom FindBy
     @Query(value = "UPDATE Bread SET name = :name, price = :price, bread_type = :type WHERE id = :id")
     @Modifying
-    @Transactional
+    @Transactional // all or nothing
     void updateBread(@Param("id") Long id,
                      @Param("name") String name,
                      @Param("price") BigDecimal price,

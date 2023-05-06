@@ -23,6 +23,7 @@ public class Address {
     String postalCode;
     String country;
 
+    // all fields except id
     public Address(String name, String number, String postalCode, String country) {
         this.name = name;
         this.number = number;
