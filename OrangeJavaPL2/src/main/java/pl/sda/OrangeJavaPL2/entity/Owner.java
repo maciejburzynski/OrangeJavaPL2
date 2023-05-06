@@ -1,10 +1,22 @@
 package pl.sda.OrangeJavaPL2.entity;
 
-import javax.persistence.Embeddable;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Embeddable
+import javax.persistence.*;
+
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
 public class Owner {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
     String firstName; // -> by default in db = first_name
     String lastName;
     int age;

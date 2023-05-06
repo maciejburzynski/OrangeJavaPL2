@@ -1,24 +1,23 @@
 package pl.sda.OrangeJavaPL2.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.yaml.snakeyaml.events.Event;
 
 import javax.persistence.*;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "addresses")
 public class Address {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
     String name;
-    @Transient // to not include this field in DB schema
+//    @Transient // to not include this field in DB schema
     String number;
     String postalCode;
     String country;
