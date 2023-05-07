@@ -1,9 +1,11 @@
 package pl.sda.OrangeJavaPL2.apiconsuming;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -23,16 +25,33 @@ public class MyFirstConsumerService {
                 .uri(URI.create("https://www.boredapi.com/api/activity"))
                 .build();
         HttpResponse httpResponse = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+        // JSON -> Java Object (POJO) (model class)
+        ObjectMapper objectMapper = new ObjectMapper();
 
-        log.info(httpResponse.body().toString());
+        MyFirstConsumerResponse response = objectMapper
+                .readValue(httpResponse.body().toString(),
+                        MyFirstConsumerResponse.class);
+
+        log.info(response.getActivity());
     }
 
     /*
     *
-    * Create your own consumer and consumpt API of your preferences
+    * {
+    "activity": "Start a blog for something you're passionate about",
+    "type": "recreational",
+    "participants": 1,
+    "price": 0.05,
+    "link": "",
+    "key": "8364626",
+    "accessibility": 0.1
+}
+*
+* -------------------> MyFirstConsumerResponse
     *
-    * https://apipheny.io/free-api/
     *
+    *
+    *    *
     *
     * */
 }
