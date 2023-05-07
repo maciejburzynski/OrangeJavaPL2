@@ -1,6 +1,7 @@
 package pl.sda.OrangeJavaPL2.dataInitializer;
 
 import lombok.RequiredArgsConstructor;
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
@@ -46,7 +47,7 @@ public class DataInitializer {
         Address address1 = new Address("Pilsudzkiego", "18", "10-100", "Polska");
 
         Bakery bakery = new Bakery(
-                Arrays.asList(bread,bread1),
+                Arrays.asList(bread,bread1, new Bread("Bagietka", BreadType.WHEAT, BigDecimal.valueOf(3.50))),
                 address,
                 new Owner("Maciej", "Burzynski", 29));
         Bakery bakery1 = new Bakery(

@@ -31,6 +31,7 @@ public class BreadRestController {
 
     }
 
+    // example:    localhost:<port>/api/breads/8
     @GetMapping("/{id}") //localhost:<port>/api/breads/30 -> get bread with id of 30
     public ResponseEntity getBreadById(@PathVariable Long id) {
         log.info("Get a bread with id: {}", id);

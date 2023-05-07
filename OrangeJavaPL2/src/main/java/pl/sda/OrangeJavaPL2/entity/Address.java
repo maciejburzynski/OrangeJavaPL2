@@ -22,6 +22,44 @@ public class Address {
     String postalCode;
     String country;
 
+    /* One Direction:
+    Bakery{
+        id;
+
+        @OneToOne
+        Address address;
+    }
+    bakery.getAddress - possible
+    -----------------------------------
+    Address{
+        id;
+
+    }
+    address.getBakery - impossible
+
+    */
+//    -----------------------------------
+        /* bi-Direction:
+    Bakery{
+        id;
+
+        @OneToOne
+        Address address;
+    }
+    bakery.getAddress - possible
+    -----------------------------------
+    Address{
+        id;
+
+        @OneToOne
+        Bakery bakery;
+    }
+    address.getBakery - possible
+
+    */
+
+
+
     // all fields except id
     public Address(String name, String number, String postalCode, String country) {
         this.name = name;

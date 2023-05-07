@@ -21,5 +21,9 @@ public class Owner {
     String lastName;
     int age;
 
-
+    public Owner(String firstName, String lastName, int age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
 }
