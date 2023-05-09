@@ -31,6 +31,11 @@ public class BreadRestController {
 
     }
 
+    /*
+    Request - client - Postman/Browser(Mozilla/Chrome/Safari) / header in request headers
+    Response - Server - Springboot application - header in Response Entity
+
+     */
     // example:    localhost:<port>/api/breads/8
     @GetMapping("/{id}") //localhost:<port>/api/breads/30 -> get bread with id of 30
     public ResponseEntity getBreadById(@PathVariable Long id) {
